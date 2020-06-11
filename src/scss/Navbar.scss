@@ -1,6 +1,7 @@
 nav {
     background: #0e153a;
     .logo-wrapper {
+        padding-right: 4rem;
         .fas.fa-film {
             color: whitesmoke;
             font-size: 1.5rem;
@@ -15,7 +16,6 @@ nav {
         .navbar-toggler-icon {
             display: flex;
             align-items: center;
-
             .fas.fa-bars {
                 color: #e2f3f5;
                 font-size: 1.5rem;
@@ -24,7 +24,19 @@ nav {
             }
         }
     }
-    .nav-link {
-        color: #e2f3f5;
+
+    ul {        
+        .nav-link {
+            margin-right: 4rem;
+            color: #e2f3f5;
+            &:hover{
+                background: #3d5af1;
+                transition: .2s;
+                color:#e2f3f5;
+                border-radius: 0.2rem;
+            }
+        }
     }
 }
+
+
