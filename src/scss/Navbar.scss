@@ -1,0 +1,30 @@
+nav {
+    background: #0e153a;
+    .logo-wrapper {
+        .fas.fa-film {
+            color: whitesmoke;
+            font-size: 1.5rem;
+            padding-right: 0.3rem;
+        }
+        .navbar-brand {
+            color: whitesmoke;
+        }
+    }
+    .navbar-toggler {
+        background-color: #3d5af1;
+        .navbar-toggler-icon {
+            display: flex;
+            align-items: center;
+
+            .fas.fa-bars {
+                color: #e2f3f5;
+                font-size: 1.5rem;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+    .nav-link {
+        color: #e2f3f5;
+    }
+}
