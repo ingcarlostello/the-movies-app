@@ -1,6 +1,8 @@
 import React from 'react';
-import MovieList from './MovieList'
+import MovieList from './MovieList';
+import MovieDetail from './MovieDetail';
 import '../scss/Home.scss'
+
 
 const Home = () => {
     return (
@@ -9,8 +11,8 @@ const Home = () => {
                 <div class="col-3 sidebar">
                     <MovieList />
                 </div>
-                <div class="col-8">
-                   
+                <div class="col-8 details">
+                   <MovieDetail />
                 </div>
             </div>
         </div>

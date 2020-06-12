@@ -1,5 +1,5 @@
 .container-fluid{  
-    background: pink;
+    
     .row-home{        
         background-color: green;
         width: auto;          
@@ -9,6 +9,9 @@
             width: 100%;  
             padding-left: 0.5rem;    
             padding-right: 0.5rem;                 
+        }
+        .details{
+            margin: 0 auto;
         }
     }
 }
