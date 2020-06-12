@@ -9,7 +9,7 @@ const MovieDetail = () => {
 
             <div className="button-wrapper"> 
                 <Link to="/add-movie">
-                    <button type="button" class="btn btn-primary"><span><i class="fas fa-plus"></i></span> Primary</button>
+                    <button type="button" class="btn btn-primary"><span><i class="fas fa-plus"></i></span>Add New Movie</button>
                 </Link>           
             </div>
 
