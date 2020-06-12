@@ -1,11 +1,21 @@
 import React from 'react';
+import CardTopFive from './CardTopFive'
 
+import '../scss/TopFive.scss';
 
 const TopFive = () => {
     return (
         <div>
-            <h1>From Top Five Page</h1>
+            <div className="container-fluid">
+                <h1>Top 5 Movies</h1>
+                <CardTopFive />
+                <CardTopFive />
+                <CardTopFive />
+                <CardTopFive />
+                <CardTopFive />
+            </div>            
         </div>
+
     );
 };
 
