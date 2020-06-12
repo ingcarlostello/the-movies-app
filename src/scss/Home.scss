@@ -1,0 +1,12 @@
+.container-fluid{  
+    background: pink;
+    .row{
+        
+        background-color: green;
+        .sidebar{
+            background:blue;
+            height: 100vh;
+        }
+    }
+}
+
