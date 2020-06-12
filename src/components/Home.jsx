@@ -1,18 +1,17 @@
 import React from 'react';
+import MovieList from './MovieList'
 import '../scss/Home.scss'
 
 const Home = () => {
     return (
         <div className="container-fluid">
-            <div className="row">
+            <div className="row row-home">
                 <div class="col-3 sidebar">
-                    col 4
+                    <MovieList />
                 </div>
                 <div class="col-8">
-                   col 8
+                   
                 </div>
-                {/* <nav className="col-md-3 col-lg-2 d-md-block sidebar">
-                </nav>           */}
             </div>
         </div>
         

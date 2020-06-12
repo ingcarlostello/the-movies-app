@@ -1,11 +1,14 @@
 .container-fluid{  
     background: pink;
-    .row{
-        
+    .row-home{        
         background-color: green;
-        .sidebar{
+        width: auto;          
+        .sidebar{            
             background:blue;
             height: 100vh;
+            width: 100%;  
+            padding-left: 0.5rem;    
+            padding-right: 0.5rem;                 
         }
     }
 }
