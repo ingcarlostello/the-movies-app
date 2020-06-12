@@ -1,0 +1,29 @@
+.container-fluid {
+    form {
+        padding-bottom: 3rem;
+        margin-top: 3rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        .form-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .text-area-wrapper {
+            margin-left: 3rem;
+            margin-right: 3rem;
+        }
+
+        .inputs-wrapper {
+            margin-top: 2rem;
+
+            margin-left: 3rem;
+            margin-right: 3rem;
+            .form-group {
+                text-align: center;
+                margin-left: 0.62rem;
+                margin-right: 0.62rem;
+            }
+        }
+    }
+}
