@@ -6,17 +6,24 @@ export const MovieContext = createContext();
 
 //* 2) Create the provider
 const MovieProvider = (props) => {
-    const [infoMovie, setInfoMovie] = useState({
-        title: "avengers",
-        release: "12/05/2019",
-        description: "kskjjj ttjtkje aavdemtugjd babifk",
-        image: "gg.jpg"
-    });
+    
+
+    const [arrayMovies, setArrayMovies] = useState([]);
+    const listedMovies = (movie) =>{
+        setArrayMovies([
+        ...arrayMovies,
+        movie
+        ]);
+    };
+
+    
 
     return (
         <MovieContext.Provider
             value={{
-                infoMovie
+                
+                listedMovies,
+                arrayMovies
             }}
         >
             {props.children}

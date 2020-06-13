@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import MovieProvider from './context/MovieContext'
 import {
   BrowserRouter as Router,
