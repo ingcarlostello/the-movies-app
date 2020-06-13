@@ -6,6 +6,21 @@ const MovieList = () => {
     return (
         <div className="list-movies">
             <MovieItem />
+            <MovieItem />
+            <MovieItem />
+            <MovieItem />
+            <MovieItem />
+            <MovieItem />
+            <MovieItem />
+            <MovieItem />
+            <MovieItem />
+            <MovieItem />
+            <MovieItem />
+            <MovieItem />
+            <MovieItem />
+            <MovieItem />
+            <MovieItem />
+            <MovieItem />
         </div>
     );
 };

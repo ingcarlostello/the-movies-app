@@ -1,36 +1,35 @@
 import React from 'react';
-import { Link} from "react-router-dom";
-import image from '../img/avengers.jpg'; 
+import { Link } from "react-router-dom";
+import image from '../img/avengers.jpg';
 import '../scss/MovieDetail.scss';
 
 const MovieDetail = () => {
     return (
         <div className="movieDetail-wrapper">
 
-            <div className="button-wrapper"> 
+            <div className="button-wrapper">
                 <Link to="/add-movie">
                     <button type="button" class="btn btn-primary"><span><i class="fas fa-plus"></i></span>Add New Movie</button>
-                </Link>           
+                </Link>
             </div>
 
-
-            <div className="card-wrapper">
-                <div className="card mb-3">
-                    <div className="row no-gutters">
-                        <div className="col-md-4">
-                            <img src={image} className="card-img" alt="..." />
-                        </div>
-                        <div className="col-md-8">
-                            <div className="card-body">
-                                <h5 className="card-title">Card title</h5>
-                                <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+            <div class="row row-cols-1 row-cols-md-1 wrapper-card">
+                <div class="col mb-4 movieDetail-col">
+                    <div class="card movieDetail-card w-50">
+                        <div class="card-header">
+                            <h5>Avengers End Game</h5>
+                            <div className="card-header-date">
+                                <p>19/05/2019</p>
                             </div>
+                        </div>
+                        <img src={image} class="card-img-top" alt="..." />
+                        <div class="card-body">                           
+                            <p class="card-text"><strong>Movie Description:</strong> This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>       
+        </div>
     );
 };
 

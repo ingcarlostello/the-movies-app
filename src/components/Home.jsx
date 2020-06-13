@@ -1,22 +1,22 @@
 import React from 'react';
 import MovieList from './MovieList';
 import MovieDetail from './MovieDetail';
-import '../scss/Home.scss'
-
+import '../scss/Home.scss';
 
 const Home = () => {
     return (
         <div className="container-fluid">
             <div className="row row-home">
-                <div class="col-3 sidebar">
+                <div class="col-sm col-md-12 col-lg-4 order-12 order-lg-1 sidebar">
                     <MovieList />
                 </div>
-                <div class="col-8 details">
+                
+                <div class="col-sm col-md-12 col-lg-8 order-1 order-lg-2 details">
                    <MovieDetail />
                 </div>
+                
             </div>
-        </div>
-        
+        </div>        
     );
 };
 
