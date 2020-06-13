@@ -8,20 +8,21 @@ const MovieDetail = () => {
         <div className="container-fluid movieDetail-container">
             <div className="button-wrapper">
                 <Link to="/add-movie">
-                    <button type="button" class="btn btn-primary"><span><i class="fas fa-plus"></i></span>Add New Movie</button>
+                    <button type="button" className="btn btn-primary"><span><i className="fas fa-plus"></i></span>Add New Movie</button>
                 </Link>
             </div>
 
             <div className="movieDetail__card">
+                
+                <div className="movieDetail__card-wrapper-photo">
+                    <div className="movieDetail__card-img">
+                        <img src={image} className="movieDetail__card-photo" alt="..." />
+                    </div>
+                </div>
                 <div className="movieDetail__card-header">
                     <h2>Avengers End Game</h2>
                     <div className="card-header-date">
                         <p>19/05/2019</p>
-                    </div>
-                </div>
-                <div className="movieDetail__card-wrapper-photo">
-                    <div className="movieDetail__card-img">
-                        <img src={image} className="movieDetail__card-photo" alt="..." />
                     </div>
                 </div>
                 <div className="movieDetail__card-text">

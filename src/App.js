@@ -1,4 +1,5 @@
 import React from 'react';
+import MovieProvider from './context/MovieContext'
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,7 +13,8 @@ import './scss/App.scss';
 
 function App() {
   return (
-    <Router>
+    <MovieProvider>
+      <Router>
       <div className="App">
         <Navbar />
         <Switch>   
@@ -28,7 +30,7 @@ function App() {
         </Switch>
       </div>
     </Router>
-
+    </MovieProvider>
   );
 }
 

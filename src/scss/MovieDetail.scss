@@ -7,39 +7,47 @@
         width: auto;
     }
     .movieDetail__card {
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
         height: auto;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
         width: 100%;
         background: white;
+        padding-top: 3rem;
         padding-bottom: 1.56rem;
         border-radius: 0.5rem;
+        position: relative;
+        margin-top: 30%;
         .movieDetail__card-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: #22d1ee;
-            padding: 0.5rem 1.56rem;
+            padding: 0.5rem 4rem 0 4rem;
             border-radius: 0.5rem 0.5rem 0 0;
         }
         .movieDetail__card-wrapper-photo {
             background: whitesmoke;
-            padding: 0.5rem 0;
+
             .movieDetail__card-img {
+                position: absolute;
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
             }
             .movieDetail__card-photo {
-                height: 55%;
-                width: 55%;
+                height: 12.8rem;
+                width: 18.8rem;
                 border-radius: 0.5rem;
-          
+                margin: -95% 0 0 0;
+                transform: translateY(-50%);
+                box-shadow: 10px 10px 60px 0px rgba(0, 0, 0, 0.75);
             }
         }
         .movieDetail__card-text {
             padding-top: 1.56rem;
-            padding-left: 1.56rem;
-            padding-right: 1.56rem;
+            padding-left: 4rem;
+            padding-right: 4rem;
         }
     }
 }

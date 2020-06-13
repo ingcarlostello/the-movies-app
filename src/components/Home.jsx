@@ -7,11 +7,11 @@ const Home = () => {
     return (
         <div className="container-fluid">
             <div className="row row-home">
-                <div class="col-sm col-md-12 col-lg-4 order-12 order-lg-1 sidebar">
+                <div className="col-sm col-md-12 col-lg-4 order-12 order-lg-1 sidebar">
                     <MovieList />
                 </div>
                 
-                <div class="col-sm col-md-12 col-lg-8 order-1 order-lg-2 details">
+                <div className="col-sm col-md-12 col-lg-8 order-1 order-lg-2 details">
                    <MovieDetail />
                 </div>
                 

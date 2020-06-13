@@ -14,7 +14,7 @@ const Navbar = () => {
                 <div className="logo-wrapper">
                     <Link to="/">
                         <i className="fas fa-film"></i>
-                        <a className="navbar-brand" href="true">The Movies App</a>
+                        <span className="navbar-brand" href="true">The Movies App</span>
                     </Link> 
                 </div>
 
@@ -28,17 +28,17 @@ const Navbar = () => {
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item">
                             <NavLink to="/"  >
-                                <a className="nav-link" href="true">Home</a>                                
+                                <span className="nav-link" href="true">Home</span>                                
                             </NavLink>                            
                         </li>                        
                         <li className="nav-item">
                             <NavLink to="/add-movie"  >
-                                <a className="nav-link" href="true">Add Movie</a>                                 
+                                <span className="nav-link" href="true">Add Movie</span>                                 
                             </NavLink>                            
                         </li>
                         <li className="nav-item">
                             <NavLink to="/top-five"  >
-                                <a className="nav-link" href="true">Top Five</a>                                 
+                                <span className="nav-link" href="true">Top Five</span>                                 
                             </NavLink>                            
                         </li>
                     </ul>
