@@ -6,8 +6,6 @@ import '../scss/AddMovie.scss'
 const AddMovie = () => {
 
     const { listedMovies, db } = useContext(MovieContext);
-    console.log(db);
-    
 
     //* state to string values
     const [addMovie, setAddMovie] = useState({

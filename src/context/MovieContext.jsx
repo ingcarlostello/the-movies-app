@@ -15,24 +15,24 @@ const MovieProvider = (props) => {
         movies: "title, release, description, image"
     })
     db.open().catch((err) => {
-        console.log(err.stack || err);    
-    })    
+        console.log(err.stack || err);
+    })
 
     const [arrayMovies, setArrayMovies] = useState([]);
-    const listedMovies = (movie) =>{
+    const listedMovies = (movie) => {
         setArrayMovies([
-        ...arrayMovies,
-        movie
+            ...arrayMovies,
+            movie
         ]);
-    };   
+    };
 
     useEffect(() => {
-        const getMovies = async () =>{
+        const getMovies = async () => {
             let allMovies = await db.movies.toArray();
-            console.log(allMovies);            
+            setArrayMovies(allMovies);
         }
         getMovies();
-    }, [])
+    }, []);
 
     return (
         <MovieContext.Provider
@@ -40,6 +40,7 @@ const MovieProvider = (props) => {
                 db,
                 listedMovies,
                 arrayMovies
+                // infoMovieDb
             }}
         >
             {props.children}

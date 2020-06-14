@@ -1,21 +1,12 @@
-import React, { useContext, useState } from 'react';
-import { MovieContext } from '../context/MovieContext';
-import '../scss/MovieItem.scss'
+import React from 'react';
+import '../scss/MovieItem.scss';
 
-const MovieItem = ({movieName, releaseDate}) => {
-
-    const { arrayMovies } = useContext(MovieContext);
-    const [detailsMovie, setDetailsMovie] = useState(arrayMovies)
-
-    const showMovieDetail = () => {
-        console.log(detailsMovie)
-    }
-
+const MovieItem = ({movieName, releaseDate}) => {    
     return (
         <div>
-            <div className="card" onClick={showMovieDetail}>
-                <div className="card-body">                   
-                    <h5 className="card-title">{movieName}</h5>                   
+            <div className="card">
+                <div className="card-body">
+                    <h5 className="card-title">{movieName}</h5>
                     <p className="card-text">Release Date: {releaseDate}</p>
                 </div>
             </div>
