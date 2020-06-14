@@ -7,7 +7,7 @@ import '../scss/MovieList.scss';
 const MovieList = () => {
 
      let {arrayMovies} = useContext(MovieContext)
-     console.log(arrayMovies)
+  
 
     return (
         <div className="list-movies">

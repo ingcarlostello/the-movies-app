@@ -5,40 +5,60 @@ import '../scss/AddMovie.scss'
 
 const AddMovie = () => {
 
-    const { listedMovies } = useContext(MovieContext);
+    const { listedMovies, db } = useContext(MovieContext);
+    console.log(db);
+    
 
+    //* state to string values
     const [addMovie, setAddMovie] = useState({
         title: "",
         release: "",
-        image: "",
         description: ""
     });
+    //* state to images
+    const [image, setImage] = useState();
+    
+    //* allow read the image file from pc and decode it
+    const getFile = (e) => {
+        let reader = new FileReader();
+        reader.readAsDataURL(e[0]);
+        reader.onload= (e) => {
+            setImage(reader.result);
+        }
+    }
 
+    //* add the data value to state
     const handleChange = (e) => {
         setAddMovie({
             ...addMovie,
-            [e.target.name]: e.target.value
+            [e.target.name]: e.target.value,
+            //* add the image property to the state (addMovie)
+            image:image          
         });
     };
-    const { title, release, image, description } = addMovie;
+    const { title, release, description } = addMovie;
 
     //* Save the movie and listed at MovieList component
-    const saveMovie = (e) => {
+    const saveMovie = async (e) => {
         e.preventDefault();
         listedMovies(addMovie);
-         setAddMovie({
-             title: "",
+        await db.movies.add({
+            title: title,
+            release: release,
+            description: description,
+            image:image
+        });
+        setAddMovie({
+            title: "",
             release: "",
-            image: "",
             description: ""
-        })
+        })       
     }
-
+    
     return (
         <div className="container-fluid">
             <form
                 onSubmit={saveMovie}
-                // onClick={() =>  <Link to="/">Home</Link>}
             >
                 <div className="form-card-header card-header">
                     <h3>Add Movie</h3>
@@ -73,23 +93,15 @@ const AddMovie = () => {
                                     value={release}
                                     onChange={handleChange}
                                 />
-                                {/* <DatePicker
-                                    selected={startDate}
-                                    onChange={date => setStartDate(date)}
-                                    timeCaption="time"
-                                    dateFormat="d MMM yyy"
-                                /> */}
                             </div>
                         </div>
                         <div className="col-sm col-md-12 col-lg-4">
                             <div className="form-group">
                                 <label htmlFor="inputFile">Movie Image</label>
-                                <input
-                                    type="file"
-                                    className="form-control-file"
-                                    name="image"
-                                    onChange={handleChange}
-                                    value={image}
+                                <input 
+                                    type="file" 
+                                    name="image"  
+                                    onChange={e => getFile(e.target.files)}                               
                                 />
                             </div>
                         </div>

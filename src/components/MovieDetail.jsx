@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-// import image from '../img/avengers.jpg';
 import '../scss/MovieDetail.scss';
 
 const MovieDetail = ({titleMovie, photoMovie, releaseMovie, descriptionMovie}) => {
