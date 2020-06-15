@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import CardTopFive from './CardTopFive'
 import { MovieContext } from '../context/MovieContext';
-
+import { v4 as uuidv4 } from 'uuid';
 import '../scss/TopFive.scss';
 
 const TopFive = () => {
@@ -13,6 +13,7 @@ const TopFive = () => {
             <div className="container-fluid">
                 {topFiveMovie.map((cv) => (
                     <CardTopFive
+                        key={uuidv4()}
                         movieImage={cv.image}
                         titleMovie={cv.title}
                         releaseMovie={cv.release}
