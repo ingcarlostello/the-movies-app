@@ -57,6 +57,8 @@ const MovieProvider = (props) => {
         db.movies.delete(id);
         let allMovies = await db.movies.toArray();
         setArrayMovies(allMovies);
+
+        setCloneArrayMovies(allMovies)
     }
 
     //! ********************** this function filter the cards at MovieDetail component**********************
