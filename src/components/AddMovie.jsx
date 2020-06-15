@@ -3,10 +3,16 @@ import { MovieContext } from '../context/MovieContext';
 import "react-datepicker/dist/react-datepicker.css";
 import '../scss/AddMovie.scss'
 import { v4 as uuidv4 } from 'uuid';
+import Error from '../components/Error';
 
 const AddMovie = () => {
 
     const { listedMovies, db } = useContext(MovieContext);
+    const [showError, setShowError] = useState(false);
+    const [showErrorTipeFile, setshowErrorTipeFile] = useState(false);
+
+
+
 
     //* state to string values
     const [addMovie, setAddMovie] = useState({
@@ -16,12 +22,12 @@ const AddMovie = () => {
     });
     //* state to images
     const [image, setImage] = useState();
-    
+
     //* allow read the image file from pc and decode it
     const getFile = (e) => {
         let reader = new FileReader();
         reader.readAsDataURL(e[0]);
-        reader.onload= (e) => {
+        reader.onload = (e) => {
             setImage(reader.result);
         }
     }
@@ -32,31 +38,51 @@ const AddMovie = () => {
             ...addMovie,
             [e.target.name]: e.target.value,
             //* add the image property to the state (addMovie)
-            image:image          
+            image: image
         });
     };
     const { title, release, description } = addMovie;
 
     //* Save the movie and listed at MovieList component
     const saveMovie = async (e) => {
+
         e.preventDefault();
+        const regularExpressionFile = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+        let fileInput = document.querySelector(".uploadFile");
+        let filePath = fileInput.value;
+
+        if (title.trim() === "" || release.trim() === "" || description.trim() === "" || filePath==="") {
+            setShowError(true);
+            return;
+        }else if (!regularExpressionFile.exec(filePath)){
+            setshowErrorTipeFile(true);
+            return;
+        }
+        setShowError(false)    
+        setshowErrorTipeFile(false)   
+
+
         listedMovies(addMovie);
         await db.movies.add({
-            id:uuidv4(),
+            id: uuidv4(),
             title: title,
             release: release,
             description: description,
-            image:image
+            image: image
         });
         setAddMovie({
             title: "",
             release: "",
             description: ""
-        })       
+        })
+
     }
-    
+
     return (
         <div className="container-fluid">
+
+            {showError ? <Error message={'All fields are mandatory'}/> : showErrorTipeFile ? <Error message={'Type file not allowed'}/> : null}
+
             <form
                 onSubmit={saveMovie}
             >
@@ -98,10 +124,11 @@ const AddMovie = () => {
                         <div className="col-sm col-md-12 col-lg-4">
                             <div className="form-group">
                                 <label htmlFor="inputFile">Movie Image</label>
-                                <input 
-                                    type="file" 
-                                    name="image"  
-                                    onChange={e => getFile(e.target.files)}                               
+                                <input
+                                    className="uploadFile"
+                                    type="file"
+                                    name="image"
+                                    onChange={e => getFile(e.target.files)}
                                 />
                             </div>
                         </div>
