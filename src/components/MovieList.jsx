@@ -5,13 +5,15 @@ import { MovieContext } from '../context/MovieContext';
 
 const MovieList = () => {
 
-    const { arrayMovies } = useContext(MovieContext);
+    //const { arrayMovies, cloneArrayMovies } = useContext(MovieContext);
+    const { cloneArrayMovies } = useContext(MovieContext);
     
     return (
         <div className="list-movies">
-            {arrayMovies.map((cv, i) => (
+            {cloneArrayMovies.map((cv, i) => (
                 <MovieItem
                     key={i}
+                    id={cv.id}
                     movieName={cv.title}
                     releaseDate={cv.release}
                 />

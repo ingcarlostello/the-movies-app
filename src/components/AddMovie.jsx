@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { MovieContext } from '../context/MovieContext';
 import "react-datepicker/dist/react-datepicker.css";
 import '../scss/AddMovie.scss'
+import { v4 as uuidv4 } from 'uuid';
 
 const AddMovie = () => {
 
@@ -41,6 +42,7 @@ const AddMovie = () => {
         e.preventDefault();
         listedMovies(addMovie);
         await db.movies.add({
+            id:uuidv4(),
             title: title,
             release: release,
             description: description,

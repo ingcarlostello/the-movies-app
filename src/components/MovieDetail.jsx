@@ -1,9 +1,11 @@
-import React from 'react';
+import React,  {useContext} from 'react';
 import { Link } from "react-router-dom";
 import '../scss/MovieDetail.scss';
+import { MovieContext } from '../context/MovieContext';
 
-const MovieDetail = ({titleMovie, photoMovie, releaseMovie, descriptionMovie}) => {
+const MovieDetail = ({titleMovie, photoMovie, releaseMovie, descriptionMovie, id}) => {
      
+    const { filterCards } = useContext(MovieContext);
 
     return (
         <div className="container-fluid movieDetail-container">          
@@ -13,7 +15,7 @@ const MovieDetail = ({titleMovie, photoMovie, releaseMovie, descriptionMovie}) =
                 </Link>
             </div>
 
-            <div className="movieDetail__card">
+            <div className="movieDetail__card" onClick={() => filterCards(id)}>
                 
                 <div className="movieDetail__card-wrapper-photo">
                     <div className="movieDetail__card-img">

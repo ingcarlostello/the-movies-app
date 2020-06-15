@@ -6,10 +6,9 @@ import { v4 as uuidv4 } from 'uuid';
 import '../scss/Home.scss';
 
 const Home = () => {
-
+    //cloneArrayMovies
     let {arrayMovies} = useContext(MovieContext)
-    
-
+  
     return (
         <div className="container-fluid">
             <div className="row row-home">
@@ -19,9 +18,10 @@ const Home = () => {
                     />
                 </div>                
                 <div className="col-sm col-md-12 col-lg-8 order-1 order-lg-2 details">
-                    {arrayMovies.map(cv => (
+                    {arrayMovies.map((cv, i) => (
                         <MovieDetail 
                             key={uuidv4()}
+                            id={cv.id}
                             titleMovie={cv.title}
                             photoMovie={cv.image}
                             releaseMovie={cv.release}

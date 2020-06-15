@@ -1,21 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import CardTopFive from './CardTopFive'
+import { MovieContext } from '../context/MovieContext';
 
 import '../scss/TopFive.scss';
 
 const TopFive = () => {
+
+    const { topFiveMovie } = useContext(MovieContext);
+
     return (
         <div>
             <div className="container-fluid">
-                <h1>Top 5 Movies</h1>
-                <CardTopFive />
-                <CardTopFive />
-                <CardTopFive />
-                <CardTopFive />
-                <CardTopFive />
-            </div>            
+                {topFiveMovie.map((cv) => (
+                    <CardTopFive
+                        movieImage={cv.image}
+                        titleMovie={cv.title}
+                        releaseMovie={cv.release}
+                    />
+                ))}
+            </div>
         </div>
-
     );
 };
 
