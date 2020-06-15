@@ -16,16 +16,11 @@ const MovieProvider = (props) => {
            let res = await fetch(url);
            // eslint-disable-next-line react-hooks/exhaustive-deps
            topFiveMovie = await res.json();
-           setTopFiveMovie(topFiveMovie.movies);
-           //console.log(topFiveMovie);          
+           setTopFiveMovie(topFiveMovie.movies);      
        }
        getTopFiveMovies()
     }, [])
-    console.log(topFiveMovie);    
-
-
     
-
     //* 1) set Database called "MovieDataBase"
     const db = new Dexie("MovieDataBase");
     //* 2) Create the darabase store
@@ -44,10 +39,7 @@ const MovieProvider = (props) => {
             ...arrayMovies,
             movie
         ]);
-    };
-
-
-   
+    };   
 
     let filterCards = (id) => {
 
@@ -95,10 +87,6 @@ const MovieProvider = (props) => {
         // }
     }
 
-
-      
-
-
     useEffect(() => {
         const getMovies = async () => {
             let allMovies = await db.movies.toArray();
@@ -125,14 +113,10 @@ const MovieProvider = (props) => {
                 db,
                 listedMovies,
                 arrayMovies,
-                // getIdMovie,
-                // getIdCard,
                 filterCards,
                 cloneArrayMovies,
                 deleteMovie,
                 topFiveMovie
-                
-    
             }}
         >
             {props.children}

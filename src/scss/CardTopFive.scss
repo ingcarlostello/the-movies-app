@@ -1,7 +1,73 @@
 .card-top-five {
-    margin-top: 1rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+   padding: 1rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    width: 45rem;
     .img-top-five {
-        padding: 0.62rem;
+        
+        height: auto;
+        width: 100%;
+        
+    }
+    .card-title {
+        font-family: "Quicksand", sans-serif;
+        font-weight: 700;
+    }
+    .card-description {
+        font-family: "Comfortaa", cursive;
+        font-weight: 300;
+        text-align: justify;
+        text-justify: inter-word;
+    }
+    .card-body {
+       
     }
 }
+
+/****************************************** Tablet *************************************************/
+@media (max-width: 768px) {
+    .card-top-five {
+        width: auto;
+        text-align: center;
+        margin-top: 4rem; 
+        padding: 1rem;      
+        .img-top-five {
+            padding: 0.5rem ;
+            height: auto;
+            width: 100%;
+           
+        }
+        .card-body{
+            padding: 0 0.5rem;
+        }
+    }
+}
+
+/****************************************** phone *************************************************/
+
+@media (max-width: 485px) {
+	.card-top-five {
+        width: 70%;
+        text-align: center;
+        margin-top: 4rem; 
+        padding: 2rem;      
+        .img-top-five {
+            padding: 0.62rem;
+            height: auto;
+            width: auto;
+            padding-left: 2rem;
+        }
+        .card-body{
+            padding: 0 0.5rem;
+        }
+    }
+} 
+
+@media (max-width: 320px) {
+	.card-top-five {
+        width: 50%;
+        .img-top-five {          
+            height: auto;
+            width: 100%;            
+        }     
+    }
+} 

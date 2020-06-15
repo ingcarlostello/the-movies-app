@@ -16,8 +16,9 @@ const TopFive = () => {
                         movieImage={cv.image}
                         titleMovie={cv.title}
                         releaseMovie={cv.release}
+                        descriptionMovie={cv.description}
                     />
-                ))}
+                 ))} 
             </div>
         </div>
     );
