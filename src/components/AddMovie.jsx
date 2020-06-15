@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { MovieContext } from '../context/MovieContext';
 import "react-datepicker/dist/react-datepicker.css";
 import '../scss/AddMovie.scss'
@@ -7,7 +7,7 @@ import Error from '../components/Error';
 
 const AddMovie = () => {
 
-    const { listedMovies, db } = useContext(MovieContext);
+    const { listedMovies, db, setArrayMovies, setCloneArrayMovies } = useContext(MovieContext);
     const [showError, setShowError] = useState(false);
     const [showErrorTipeFile, setshowErrorTipeFile] = useState(false);
 
@@ -43,6 +43,13 @@ const AddMovie = () => {
     };
     const { title, release, description } = addMovie;
 
+    const getMovies = async () => {
+        let allMovies = await db.movies.toArray();
+        setArrayMovies(allMovies);
+        setCloneArrayMovies(allMovies)
+        // setCloneArrayMovies(allMovies);
+    }
+
     //* Save the movie and listed at MovieList component
     const saveMovie = async (e) => {
 
@@ -51,15 +58,15 @@ const AddMovie = () => {
         let fileInput = document.querySelector(".uploadFile");
         let filePath = fileInput.value;
 
-        if (title.trim() === "" || release.trim() === "" || description.trim() === "" || filePath==="") {
+        if (title.trim() === "" || release.trim() === "" || description.trim() === "" || filePath === "") {
             setShowError(true);
             return;
-        }else if (!regularExpressionFile.exec(filePath)){
+        } else if (!regularExpressionFile.exec(filePath)) {
             setshowErrorTipeFile(true);
             return;
         }
-        setShowError(false)    
-        setshowErrorTipeFile(false)   
+        setShowError(false)
+        setshowErrorTipeFile(false)
 
 
         listedMovies(addMovie);
@@ -70,18 +77,22 @@ const AddMovie = () => {
             description: description,
             image: image
         });
+
         setAddMovie({
             title: "",
             release: "",
             description: ""
-        })
+        });
+
+        getMovies();
+
 
     }
 
     return (
         <div className="container-fluid">
 
-            {showError ? <Error message={'All fields are mandatory'}/> : showErrorTipeFile ? <Error message={'Type file not allowed'}/> : null}
+            {showError ? <Error message={'All fields are mandatory'} /> : showErrorTipeFile ? <Error message={'Type file not allowed'} /> : null}
 
             <form
                 onSubmit={saveMovie}

@@ -42,11 +42,6 @@ const MovieProvider = (props) => {
     };
 
     //! **********************This useEffect get all the movies from DB **********************
-    const getMovies = async () => {
-        let allMovies = await db.movies.toArray();
-        setArrayMovies(allMovies);
-        setCloneArrayMovies(allMovies);
-    }
     useEffect(() => {
         const getMovies = async () => {
             let allMovies = await db.movies.toArray();
@@ -56,7 +51,7 @@ const MovieProvider = (props) => {
         getMovies();
     }, []);
 
-    //! **********************this function delete a movie from the BD**********************
+    //! ********************** this function delete a movie from the BD**********************
     const deleteMovie = async (id) => {
         console.log(id);
         db.movies.delete(id);
@@ -64,21 +59,19 @@ const MovieProvider = (props) => {
         setArrayMovies(allMovies);
     }
 
-
+    //! ********************** this function filter the cards at MovieDetail component**********************
     let filterCards = (id) => {
         if (arrayMovies.length > 1) {
             let filterArray = arrayMovies.filter(cv => {
                 return cv.id === id
             })
             setArrayMovies(filterArray);
-            console.log("se hizo el filtro del array original")
         }
         else {
             let filterArray = cloneArrayMovies.filter(cv => {
                 return cv.id === id
             })
             setArrayMovies(filterArray);
-            console.log("se hizo el filtro del Clone array")
         } 
     }
 
@@ -91,7 +84,10 @@ const MovieProvider = (props) => {
                 filterCards,
                 cloneArrayMovies,
                 deleteMovie,
-                topFiveMovie
+                topFiveMovie,
+
+                setArrayMovies,
+                setCloneArrayMovies
             }}
         >
             {props.children}
