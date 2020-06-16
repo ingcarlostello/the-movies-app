@@ -9,11 +9,11 @@ const MovieDetail = ({titleMovie, photoMovie, releaseMovie, descriptionMovie, id
 
     return (
         <div className="container-fluid movieDetail-container">          
-            <div className="button-wrapper">
+            {/* <div className="button-wrapper">
                 <Link to="/add-movie">
                     <button type="button" className="btn btn-primary"><span><i className="fas fa-plus"></i></span>Add New Movie</button>
                 </Link>
-            </div>
+            </div> */}
 
             <div className="movieDetail__card" onClick={() => filterCards(id)}>
                 

@@ -1,12 +1,15 @@
+
 .card-top-five {
-   padding: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 1rem;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-    width: 45rem;
-    .img-top-five {
-        
+    margin-top: 4rem;
+    width: 40rem;
+    
+    .img-top-five {        
         height: auto;
-        width: 100%;
-        
+        width: 100%;        
     }
     .card-title {
         font-family: "Quicksand", sans-serif;
@@ -18,9 +21,6 @@
         text-align: justify;
         text-justify: inter-word;
     }
-    .card-body {
-       
-    }
 }
 
 /****************************************** Tablet *************************************************/
@@ -29,7 +29,9 @@
         width: auto;
         text-align: center;
         margin-top: 4rem; 
-        padding: 1rem;      
+        padding: 1rem;    
+        margin-left: 0;
+    margin-right: 0;  
         .img-top-five {
             padding: 0.5rem ;
             height: auto;
@@ -49,7 +51,9 @@
         width: 70%;
         text-align: center;
         margin-top: 4rem; 
-        padding: 2rem;      
+        padding: 2rem 0;    
+        margin-left: 0;
+        margin-right: 0;  
         .img-top-five {
             padding: 0.62rem;
             height: auto;

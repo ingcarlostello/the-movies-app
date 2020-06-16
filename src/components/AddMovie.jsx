@@ -4,6 +4,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import '../scss/AddMovie.scss'
 import { v4 as uuidv4 } from 'uuid';
 import Error from '../components/Error';
+import { Link } from "react-router-dom";
+
 
 const AddMovie = () => {
 
@@ -65,9 +67,8 @@ const AddMovie = () => {
             setshowErrorTipeFile(true);
             return;
         }
-        setShowError(false)
-        setshowErrorTipeFile(false)
-
+        setShowError(false);
+        setshowErrorTipeFile(false);
 
         listedMovies(addMovie);
         await db.movies.add({
@@ -83,10 +84,7 @@ const AddMovie = () => {
             release: "",
             description: ""
         });
-
         getMovies();
-
-
     }
 
     return (
@@ -100,7 +98,10 @@ const AddMovie = () => {
                 <div className="form-card-header card-header">
                     <h3>Add Movie</h3>
                     <div className="form-header-button-wrapper">
-                        <button type="submit" className="btn btn-primary">Save Movie</button>
+                     
+                            <button type="submit" className="btn btn-primary">Save Movie</button>
+                  
+                        
                     </div>
                 </div>
 

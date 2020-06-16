@@ -4,22 +4,28 @@ import { MovieContext } from '../context/MovieContext';
 import MovieDetail from './MovieDetail';
 import { v4 as uuidv4 } from 'uuid';
 import '../scss/Home.scss';
+import { Link } from "react-router-dom";
 
 const Home = () => {
-    //cloneArrayMovies
-    let {arrayMovies} = useContext(MovieContext)
-  
+    
+    let { arrayMovies } = useContext(MovieContext)
+
     return (
         <div className="container-fluid">
             <div className="row row-home">
                 <div className="col-sm col-md-12 col-lg-4 order-12 order-lg-1 sidebar">
-                    <MovieList  
+                    <MovieList
                         key={uuidv4()}
                     />
-                </div>                
+                </div>
                 <div className="col-sm col-md-12 col-lg-8 order-1 order-lg-2 details">
+                    <div className="button-wrapper">
+                        <Link to="/add-movie">
+                            <button type="button" className="btn btn-primary"><span><i className="fas fa-plus"></i></span>Add New Movie</button>
+                        </Link>
+                    </div>
                     {arrayMovies.map((cv, i) => (
-                        <MovieDetail 
+                        <MovieDetail
                             key={uuidv4()}
                             id={cv.id}
                             titleMovie={cv.title}
@@ -27,11 +33,11 @@ const Home = () => {
                             releaseMovie={cv.release}
                             descriptionMovie={cv.description}
                         />
-                    ))}                  
+                    ))}
                 </div>
-                
+
             </div>
-        </div>        
+        </div>
     );
 };
 

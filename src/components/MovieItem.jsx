@@ -9,11 +9,15 @@ const MovieItem = ({ movieName, releaseDate, id }) => {
     return (
         <div className="wrapper-card">
             <div className="card">
+                <span className="wrapper-delete" >
+                    <i className="far fa-trash-alt" onClick={() => deleteMovie(id)}></i>
+                </span>
                 <div className="card-body" onClick={() => filterCards(id)}>
-                    <h5 className="card-title">{movieName}</h5>
-                    <p className="card-text">Release Date: {releaseDate}</p>
+                    <div className="wrapper-text">
+                        <h5 className="card-title">{movieName}</h5>
+                        <p className="card-text">Release Date: {releaseDate}</p>
+                    </div>
                 </div>
-                <button type="button" className="btn btn-danger" onClick={() => deleteMovie(id)}>Delete</button>
             </div>
         </div>
     );
