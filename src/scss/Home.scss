@@ -1,5 +1,4 @@
-.container-fluid{  
-   
+.container-fluid{    
     .row-home{    
         width: auto;          
         .sidebar{                 
@@ -30,20 +29,16 @@
 
 /****************************************** Tablet *************************************************/
 @media (max-width: 768px) {
-	.container-fluid .row-home .details {
-     
-        height: 45rem;
-       
+	.container-fluid .row-home .details {     
+        height: 45rem;       
     }
 }
 
 /****************************************** phone *************************************************/
 
 @media (max-width: 485px) {
-   .container-fluid .row-home .details {
-     
-       margin-bottom: 7rem;
-       
+   .container-fluid .row-home .details {     
+       margin-bottom: 7rem;       
     }
 } 
 

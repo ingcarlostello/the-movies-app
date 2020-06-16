@@ -1,6 +1,5 @@
 .movieDetail-container {
     width: auto;
-
     .movieDetail__card {
         height: auto;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
@@ -20,7 +19,6 @@
         }
         .movieDetail__card-wrapper-photo {
             background: whitesmoke;
-
             .movieDetail__card-img {
                 position: absolute;
                 display: flex;
@@ -86,9 +84,7 @@
                 .movieDetail__card-photo{
                     margin: -140% 0 0 0;
                 }
-
             }
-        }
-             
+        }             
     }
 }
