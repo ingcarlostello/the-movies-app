@@ -5,11 +5,11 @@ import '../scss/MovieItem.scss';
 
 const MovieItem = ({ movieName, releaseDate, id }) => {
 
-    const { filterCards, deleteMovie } = useContext(MovieContext);
+    const { filterCards, deleteMovie, } = useContext(MovieContext);
 
     return (
         <div className="wrapper-card">
-            <div className="card">
+            <div className="card card-movie-item" >
                 <span className="wrapper-delete" >
                     <i className="far fa-trash-alt" onClick={() => deleteMovie(id)}></i>
                 </span>

@@ -11,6 +11,7 @@ const MovieProvider = (props) => {
     let [topFiveMovie, setTopFiveMovie] = useState([]);
     const [arrayMovies, setArrayMovies] = useState([]);
     const [cloneArrayMovies, setCloneArrayMovies] = useState([]);
+    
 
     //! 1.1) set Database called "MovieDataBase"
     const db = new Dexie("MovieDataBase");
@@ -53,7 +54,6 @@ const MovieProvider = (props) => {
 
     //! ********************** this function delete a movie from the BD**********************
     const deleteMovie = async (id) => {
-        console.log(id);
         db.movies.delete(id);
         let allMovies = await db.movies.toArray();
         setArrayMovies(allMovies);
@@ -73,10 +73,10 @@ const MovieProvider = (props) => {
                 return cv.id === id;
             })
             setArrayMovies(filterArray);
-        } 
+        }
     }
 
-    return (
+  return (
         <MovieContext.Provider
             value={{
                 db,
@@ -87,7 +87,8 @@ const MovieProvider = (props) => {
                 deleteMovie,
                 topFiveMovie,
                 setArrayMovies,
-                setCloneArrayMovies
+                setCloneArrayMovies,
+              
             }}
         >
             {props.children}
