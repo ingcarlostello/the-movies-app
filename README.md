@@ -16,7 +16,7 @@ Is a small and simple application that captures and stores information about mov
 
 
 ### `How to run the app`
-1. Clone or download de app, extract, open VS code and runs the command `npm init`. This will install all the dependencies that project needs to run.
+1. Clone or download de app, extract, open VS code and runs the command `npm install`. This will install all the dependencies that project needs to run.
 
 2. run at the command console __npm start__ . Thast it!
 
