@@ -2,11 +2,7 @@ import React from 'react';
 import { Link, NavLink } from "react-router-dom";
 import '../scss/Navbar.scss';
 
-
-
-const Navbar = () => {
-
-    
+const Navbar = () => {   
 
     return (
         <div>

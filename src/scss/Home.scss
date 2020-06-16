@@ -12,6 +12,10 @@
         .details{
              overflow: scroll;
              height: 100vh;
+             .informative-title{
+                 font-family: 'Comfortaa', cursive;
+                 font-weight: 700;
+             }
             .button-wrapper {
                 display: flex;
                 justify-content: flex-end;

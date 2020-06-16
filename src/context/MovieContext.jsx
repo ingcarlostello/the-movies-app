@@ -12,9 +12,9 @@ const MovieProvider = (props) => {
     const [arrayMovies, setArrayMovies] = useState([]);
     const [cloneArrayMovies, setCloneArrayMovies] = useState([]);
 
-    //* 1) set Database called "MovieDataBase"
+    //! 1.1) set Database called "MovieDataBase"
     const db = new Dexie("MovieDataBase");
-    //* 2) Create the darabase store
+    //! 2.1) Create the darabase store
     db.version(1).stores({
         movies: "id, title, release, description, image"
     });
@@ -31,8 +31,8 @@ const MovieProvider = (props) => {
             topFiveMovie = await res.json();
             setTopFiveMovie(topFiveMovie.movies);
         }
-        getTopFiveMovies()
-    }, [])
+        getTopFiveMovies();
+    }, []);
 
     const listedMovies = (movie) => {
         setArrayMovies([
@@ -57,21 +57,20 @@ const MovieProvider = (props) => {
         db.movies.delete(id);
         let allMovies = await db.movies.toArray();
         setArrayMovies(allMovies);
-
-        setCloneArrayMovies(allMovies)
+        setCloneArrayMovies(allMovies);
     }
 
     //! ********************** this function filter the cards at MovieDetail component**********************
     let filterCards = (id) => {
         if (arrayMovies.length > 1) {
             let filterArray = arrayMovies.filter(cv => {
-                return cv.id === id
+                return cv.id === id;
             })
             setArrayMovies(filterArray);
         }
         else {
             let filterArray = cloneArrayMovies.filter(cv => {
-                return cv.id === id
+                return cv.id === id;
             })
             setArrayMovies(filterArray);
         } 
@@ -87,7 +86,6 @@ const MovieProvider = (props) => {
                 cloneArrayMovies,
                 deleteMovie,
                 topFiveMovie,
-
                 setArrayMovies,
                 setCloneArrayMovies
             }}

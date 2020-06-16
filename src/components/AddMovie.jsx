@@ -1,11 +1,9 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import { MovieContext } from '../context/MovieContext';
 import "react-datepicker/dist/react-datepicker.css";
-import '../scss/AddMovie.scss'
+import '../scss/AddMovie.scss';
 import { v4 as uuidv4 } from 'uuid';
 import Error from '../components/Error';
-import { Link } from "react-router-dom";
-
 
 const AddMovie = () => {
 
@@ -13,19 +11,16 @@ const AddMovie = () => {
     const [showError, setShowError] = useState(false);
     const [showErrorTipeFile, setshowErrorTipeFile] = useState(false);
 
-
-
-
-    //* state to string values
+    //! state to string values
     const [addMovie, setAddMovie] = useState({
-        title: "",
-        release: "",
-        description: ""
+        title: '',
+        release: '',
+        description: ''
     });
-    //* state to images
+    //! state to images
     const [image, setImage] = useState();
 
-    //* allow read the image file from pc and decode it
+    //! allow read the image file from pc and decode it
     const getFile = (e) => {
         let reader = new FileReader();
         reader.readAsDataURL(e[0]);
@@ -34,7 +29,7 @@ const AddMovie = () => {
         }
     }
 
-    //* add the data value to state
+    //! add the data value to state
     const handleChange = (e) => {
         setAddMovie({
             ...addMovie,
@@ -48,8 +43,7 @@ const AddMovie = () => {
     const getMovies = async () => {
         let allMovies = await db.movies.toArray();
         setArrayMovies(allMovies);
-        setCloneArrayMovies(allMovies)
-        // setCloneArrayMovies(allMovies);
+        setCloneArrayMovies(allMovies);
     }
 
     //* Save the movie and listed at MovieList component
@@ -60,6 +54,7 @@ const AddMovie = () => {
         let fileInput = document.querySelector(".uploadFile");
         let filePath = fileInput.value;
 
+        //! *** validating the component form AddMovie ***
         if (title.trim() === "" || release.trim() === "" || description.trim() === "" || filePath === "") {
             setShowError(true);
             return;
@@ -70,6 +65,7 @@ const AddMovie = () => {
         setShowError(false);
         setshowErrorTipeFile(false);
 
+        //! *** Add movie to DB ***
         listedMovies(addMovie);
         await db.movies.add({
             id: uuidv4(),
@@ -79,10 +75,11 @@ const AddMovie = () => {
             image: image
         });
 
+        //! *** Clean the form ***
         setAddMovie({
-            title: "",
-            release: "",
-            description: ""
+            title: '',
+            release: '',
+            description:''
         });
         getMovies();
     }
@@ -97,11 +94,8 @@ const AddMovie = () => {
             >
                 <div className="form-card-header card-header">
                     <h3>Add Movie</h3>
-                    <div className="form-header-button-wrapper">
-                     
-                            <button type="submit" className="btn btn-primary">Save Movie</button>
-                  
-                        
+                    <div className="form-header-button-wrapper">                     
+                        <button type="submit" className="btn btn-primary">Save Movie</button>             
                     </div>
                 </div>
 

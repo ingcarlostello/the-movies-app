@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
-import '../scss/MovieItem.scss';
 import { MovieContext } from '../context/MovieContext';
+import '../scss/MovieItem.scss';
+
 
 const MovieItem = ({ movieName, releaseDate, id }) => {
 

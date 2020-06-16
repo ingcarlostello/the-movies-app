@@ -1,11 +1,10 @@
 import React, { useContext } from 'react';
+import { MovieContext } from '../context/MovieContext';
 import MovieItem from './MovieItem';
 import '../scss/MovieList.scss';
-import { MovieContext } from '../context/MovieContext';
 
 const MovieList = () => {
 
-    //const { arrayMovies, cloneArrayMovies } = useContext(MovieContext);
     const { cloneArrayMovies } = useContext(MovieContext);
     
     return (

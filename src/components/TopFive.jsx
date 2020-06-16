@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import CardTopFive from './CardTopFive'
 import { MovieContext } from '../context/MovieContext';
 import { v4 as uuidv4 } from 'uuid';
+import CardTopFive from './CardTopFive';
 import '../scss/TopFive.scss';
 
 const TopFive = () => {

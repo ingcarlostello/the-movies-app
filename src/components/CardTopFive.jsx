@@ -1,8 +1,7 @@
 import React from 'react';
+import '../scss/CardTopFive.scss';
 
-import '../scss/CardTopFive.scss'
-
-const CardTopFive = ({ movieImage, titleMovie, releaseMovie, descriptionMovie }) => {
+const CardTopFive = ({movieImage, titleMovie, releaseMovie, descriptionMovie}) => {
     return (
         <div className="container-fluid conn-top-five" style={{ width: '540px' }}>
             <div className="card card-top-five">
